@@ -35,13 +35,15 @@ Wireshark will also show the flow of packets using SSH as we interact with the c
 Observe DHCP traffic
 In Wireshark, filter traffic to view only DHCP packets.  
 Open Notepad and create the file dhcp.bat containing two commands:  
-PS ipconfig /release  
-PS ipconfig /renew  
+>PS > ipconfig /release  
+>PS > ipconfig /renew
+
 This will release the IP address given, and renew it instantly.  
 This has to be done through a .bat file because connection to the VM will be lost during the release phase.  
 Once renewed, which happens very quickly, we can reconnect through RDP.  
 Enter the command to run:  
-PS .\dhcp.bat  
+>PS > .\dhcp.bat
+
 After logging back in, Wireshark will show the process the VM takes with the DHCP server to reobtain its IP addresses.  
 
 Observe
