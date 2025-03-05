@@ -24,3 +24,24 @@ Returned to the windows VM and waited for the ping connections to begin dropping
 Success.  
 Returned to the Azure portal and removed the rule blocking ICMP connections.  
 After some time, the packets being sent between the two VMs continued.  
+
+Observe SSH traffic  
+In Wireshark, filter traffic to view only SSH packets.  
+From the windows VM, enter into the linux VM using the SSH command.  
+Requires username, ip address, and password.  
+Once inside, the command 'uname' will confirm access.  
+Wireshark will also show the flow of packets using SSH as we interact with the command line of the Linux VM.  
+
+Observe DHCP traffic
+In Wireshark, filter traffic to view only DHCP packets.  
+Open Notepad and create the file dhcp.bat containing two commands:  
+PS ipconfig /release  
+PS ipconfig /renew  
+This will release the IP address given, and renew it instantly.  
+This has to be done through a .bat file because connection to the VM will be lost during the release phase.  
+Once renewed, which happens very quickly, we can reconnect through RDP.  
+Enter the command to run:  
+PS .\dhcp.bat  
+After logging back in, Wireshark will show the process the VM takes with the DHCP server to reobtain its IP addresses.  
+
+Observe
