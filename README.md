@@ -12,3 +12,5 @@ Created one windows VM and one linux VM.
 Created a virtual cloud network and subnets as a result.  
 Logged into the windows VM using RDP.  
 Logged into the linux VM using SSH.  
+Downloaded Wireshark to capture network packet information.  
+From the windows VM, sent ping requests to the private IP of the linux VM and viewed packets being sent in Wireshark.  
