@@ -46,4 +46,17 @@ Enter the command to run:
 
 After logging back in, Wireshark will show the process the VM takes with the DHCP server to reobtain its IP addresses.  
 
-Observe
+Observe DNS traffic  
+Enter `DNS` in the search bar of Wireshark to view only DNS packets.  
+In PowerShell, enter the command `nslookup`  
+Pick a website of your choice.  
+See PS display the IP address.  
+See Wireshark capture the packets being sent to the DNS server, and the return packets.  
+
+Observe RDP traffic  
+Enter `RDP` in the search bar of Wireshark.  
+It will show the initial connection being made.  
+Does not show the flow of traffic between your device and the VM however.  
+To view that, enter `tcp.port==3389` in the search bar.  
+RDP uses TCP over port 3389 which is why this is necessary.  
+This shows the constant flow of packets between the two connected computers.  
